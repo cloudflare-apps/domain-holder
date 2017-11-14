@@ -1,0 +1,61 @@
+{
+  "resources": {},
+  "preview": {
+    "hide": true
+  },
+  "hooks": [
+    {
+      "events": ["before-new-install", "before-update-install"],
+      "endpoint": "https://provisioner.appstore.cfdata.org/domdb/hook",
+      "authenticate": ["account"],
+      "failure": {
+        "action": "notify",
+        "message": "There was an error communicating with domdb"
+      }
+    }
+  ],
+  "options": {
+    "properties": {
+      "account": {
+        "title": "domdb Account",
+        "description": "Login or create a domdb account",
+        "type": "object",
+        "format": "account",
+        "order": 0,
+        "required": true,
+        "services": ["domdb"]
+      },
+      "location": {
+        "title": "Parking page location",
+        "type": "string",
+        "enum": [
+          "root",
+          "subdomain"
+        ],
+        "enumNames": {
+          "root": "Use my entire site as the domain parking page",
+          "subdomain": "Create a new subdomain to use as my parking page"
+        },
+        "default": "subdomain",
+        "order": 10
+      },
+      "subdomain": {
+        "title": "Subdomain",
+        "description": "The subdomain of your site you would like the parking page installed on. Should not already be used.",
+        "order": 20,
+        "type": "string",
+        "default": "buy",
+        "showIf": {
+          "location": "subdomain"
+        }
+      },
+      "price": {
+        "title": "Price",
+        "description": "The price you are selling this site for in US Dollars",
+        "type": "integer",
+        "order": 30,
+        "default": 5000
+      }
+    }
+  }
+}
