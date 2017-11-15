@@ -6,24 +6,24 @@
   "hooks": [
     {
       "events": ["before-new-install", "before-update-install"],
-      "endpoint": "https://provisioner.appstore.cfdata.org/domdb/hook",
+      "endpoint": "https://provisioner.appstore.cfdata.org/domainholder/hook",
       "authenticate": ["account"],
       "failure": {
         "action": "notify",
-        "message": "There was an error communicating with domdb"
+        "message": "There was an error communicating with domainholder.io"
       }
     }
   ],
   "options": {
     "properties": {
       "account": {
-        "title": "domdb Account",
-        "description": "Login or create a domdb account",
+        "title": "DomainHolder Account",
+        "description": "Login or create a DomainHolder account",
         "type": "object",
         "format": "account",
         "order": 0,
         "required": true,
-        "services": ["domdb"]
+        "services": ["domainholder"]
       },
       "location": {
         "title": "Parking page location",
