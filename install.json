@@ -23,7 +23,7 @@
         "format": "account",
         "order": 0,
         "required": true,
-        "services": ["domainholder"]
+        "services": ["domain-holder"]
       },
       "location": {
         "title": "Parking page location",
