@@ -6,7 +6,7 @@
   "hooks": [
     {
       "events": ["before-new-install", "before-update-install"],
-      "endpoint": "https://provisioner.appstore.cfdata.org/domainholder/hook",
+      "endpoint": "https://provisioner.appstore.cfdata.org/domain-holder/hook",
       "authenticate": ["account"],
       "failure": {
         "action": "notify",
