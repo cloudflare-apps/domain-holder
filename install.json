@@ -6,7 +6,7 @@
   "dns": [
     {
       "type": "A",
-      "name": "{{#options.subdomain}}{{options.subdomain}}{{/options.subdomain}}{{^options.subdomain}}@{{/options.subdomain}}",
+      "name": "{{options.subdomain}}",
       "content": "165.227.80.250"
     },
     {
@@ -26,29 +26,12 @@
         "required": true,
         "services": ["domain-holder"]
       },
-      "location": {
-        "title": "Parking page location",
-        "type": "string",
-        "enum": [
-          "root",
-          "subdomain"
-        ],
-        "enumNames": {
-          "root": "Use my entire site as the domain parking page",
-          "subdomain": "Create a new subdomain to use as my parking page"
-        },
-        "default": "subdomain",
-        "order": 10
-      },
       "subdomain": {
         "title": "Subdomain",
-        "description": "The subdomain of your site you would like the parking page installed on. Should not already be used.",
+        "description": "The subdomain of your site you would like the parking page installed on. Should not already be used. Leave blank to host the parking page at the root of the site.",
         "order": 20,
         "type": "string",
-        "default": "buy",
-        "showIf": {
-          "location": "subdomain"
-        }
+        "default": ""
       },
       "price": {
         "title": "Price",
