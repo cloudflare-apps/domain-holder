@@ -3,15 +3,16 @@
   "preview": {
     "hide": true
   },
-  "hooks": [
+  "dns": [
     {
-      "events": ["before-new-install", "before-update-install"],
-      "endpoint": "https://provisioner.appstore.cfdata.org/domain-holder/hook",
-      "authenticate": ["account"],
-      "failure": {
-        "action": "notify",
-        "message": "There was an error communicating with domainholder.io"
-      }
+      "type": "A",
+      "name": "{{#options.subdomain}}{{options.subdomain}}{{/options.subdomain}}{{^options.subdomain}}@{{/options.subdomain}}",
+      "content": "165.227.80.250"
+    },
+    {
+      "type": "TXT",
+      "name": "dh",
+      "content": "user:{{options.account.username}};price:{{options.price}}"
     }
   ],
   "options": {
