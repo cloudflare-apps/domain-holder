@@ -6,7 +6,12 @@
   "dns": [
     {
       "type": "A",
-      "name": "{{options.subdomain}}",
+      "name": "@",
+      "content": "165.227.80.250"
+    },
+    {
+      "type": "A",
+      "name": "www",
       "content": "165.227.80.250"
     },
     {
@@ -26,19 +31,12 @@
         "required": true,
         "services": ["domain-holder"]
       },
-      "subdomain": {
-        "title": "Subdomain",
-        "description": "The subdomain of your site you would like the parking page installed on. Should not already be used. Leave blank to host the parking page at the root of the site.",
-        "order": 20,
-        "type": "string",
-        "default": ""
-      },
       "price": {
         "title": "Price",
-        "description": "The price you are selling this site for in US Dollars",
+        "description": "The price you are selling this domain for in US Dollars",
         "type": "integer",
-        "order": 30,
-        "default": 5000
+        "order": 10,
+        "default": 1000
       }
     }
   }
